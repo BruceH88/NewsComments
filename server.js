@@ -1,5 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
+// Set Handlebars.
+const exphbs = require("express-handlebars");
 
 // const db = require("./models");
 const PORT = process.env.PORT || 8080;
@@ -13,12 +14,12 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-// Connect to the Mongo DB
-// mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-require("./routes/api-routes.js")(app);
+require("./routes/routes.js")(app);
 
 // Start the server
 app.listen(PORT, function() {

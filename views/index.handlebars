@@ -1,0 +1,11 @@
+{{#each article}}
+<div class="card mx-auto" style="width: 75%;">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{byLine}}</h6>
+    <p class="card-text">{{description}}</p>
+    <a target="_blank" href={{link}} class="card-link">Link to Article</a>
+    <a href="/api/articles/{{_id}}" class="card-link">Add Comment</a>
+  </div>
+</div>
+{{/each}}

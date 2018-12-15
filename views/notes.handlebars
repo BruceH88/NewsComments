@@ -1,0 +1,29 @@
+<div class="container" style="width: 75%;">
+  <h2>{{title}}</h2>
+  <h6>{{byLine}}</h6>
+  <p>{{description}}</p>
+  <a target="_blank" href={{link}} class="card-link">Link to Article</a>
+</div>
+<div class="container" style="width: 75%;">
+  <form action="/api/article/{{_id}}" method="POST">
+    <div class="input-group mb-3">
+      <input type="text" name="title" class="form-control" placeholder="Title">
+    </div>
+    <div class="input-group">
+      <textarea type="text" name="body" class="form-control" rows="4" cols="60"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<hr>
+<div class="container" style="width: 75%;">
+{{#each note}}
+<div class="card mx-auto">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text">{{body}}</p>
+    {{!-- <a target="_blank" href={{link}} class="card-link">Link to Article</a> --}}
+  </div>
+</div>
+{{/each}}
+</div>
