@@ -17,13 +17,14 @@
 </div>
 <hr>
 <div class="container" style="width: 75%;">
-{{#each note}}
-<div class="card mx-auto">
-  <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <p class="card-text">{{body}}</p>
-    {{!-- <a target="_blank" href={{link}} class="card-link">Link to Article</a> --}}
+  {{#each note}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{body}}</p>
+      <button class="delete btn btn-danger btn-sm" data-id="{{_id}}" data-artid="{{../_id}}">Delete</button>
+      {{!-- <a href="/api/delete/{{_id}}" class="card-link">Delete</a> --}}
+    </div>
   </div>
-</div>
-{{/each}}
+  {{/each}}
 </div>
